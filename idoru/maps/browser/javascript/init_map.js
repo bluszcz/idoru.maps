@@ -69,7 +69,7 @@ jQuery(document).ready(function()
 
             if (view_function=='edit') 
             {
-                if ($('input[name=longitude]').val()=='') && ($('input[name=latitude]').val()=='')
+                if (($('input[name=longitude]').val()=='') && ($('input[name=latitude]').val()==''))
                 {
                     // Try W3C Geolocation (Preferred)
                     if(navigator.geolocation) 
