@@ -1,24 +1,27 @@
 .. contents::
 
-To install add to your buildout.cfg:
+idoru.maps is a simply Plone product which ads new Content Type - Place.
 
-[buildout]
+You can see example here: http://dev.bluszcz.net/places/fast-food/cheap-falafel/
 
-eggs +=
-		idoru.maps
+To install it add to your buildout.cfg:
 
-develop +=
-		parts/idoru.maps
+	[buildout]
+	eggs +=
+			idoru.maps
 
-parts +=
-    idoru.maps
+	develop +=
+			parts/idoru.maps
 
-[idoru.maps]
-recipe = zerokspot.recipe.git
-repository = git@github.com:bluszcz/idoru.maps.git
-as_egg = true
+	parts +=
+			idoru.maps
 
+	[idoru.maps]
+	recipe = zerokspot.recipe.git
+	repository = git@github.com:bluszcz/idoru.maps.git
+	as_egg = true
 
+Egg and release should be soon.
 
 - Code repository: http://github.com/bluszcz/idoru.maps
 - Report bugs at http://github.com/bluszcz/idoru.maps/issues

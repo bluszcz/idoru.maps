@@ -69,51 +69,54 @@ jQuery(document).ready(function()
 
             if (view_function=='edit') 
             {
-                // Try W3C Geolocation (Preferred)
-                if(navigator.geolocation) 
+                if ($('input[name=longitude]').val()=='') && ($('input[name=latitude]').val()=='')
                 {
-                    browserSupportFlag = true;
-                    navigator.geolocation.getCurrentPosition(function(position) 
+                    // Try W3C Geolocation (Preferred)
+                    if(navigator.geolocation) 
                     {
-                        initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-                        map.setCenter(initialLocation);
-                        drawMarker(map, initialLocation);
-                    }, function() 
+                        browserSupportFlag = true;
+                        navigator.geolocation.getCurrentPosition(function(position) 
+                        {
+                            initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+                            map.setCenter(initialLocation);
+                            drawMarker(map, initialLocation);
+                        }, function() 
+                        {
+                            handleNoGeolocation(browserSupportFlag);
+                        });
+                  // Try Google Gears Geolocation
+                    } else if (google.gears) 
                     {
-                        handleNoGeolocation(browserSupportFlag);
-                    });
-              // Try Google Gears Geolocation
-                } else if (google.gears) 
-                {
-                    browserSupportFlag = true;
-                    var geo = google.gears.factory.create('beta.geolocation');
-                    geo.getCurrentPosition(function(position) 
-                    {
-                        initialLocation = new google.maps.LatLng(position.latitude,position.longitude);
-                        map.setCenter(initialLocation);
-                    }, function() 
-                    {
-                        handleNoGeoLocation(browserSupportFlag);
-                    });
-              // Browser doesn't support Geolocation
-                } else 
-                {
-                    browserSupportFlag = false;
-                    handleNoGeolocation(browserSupportFlag);
-                }
-              
-                function handleNoGeolocation(errorFlag) 
-                {
-                    if (errorFlag == true) 
-                    {
-                        alert("Geolocation service failed.");
-                        initialLocation = newyork;
+                        browserSupportFlag = true;
+                        var geo = google.gears.factory.create('beta.geolocation');
+                        geo.getCurrentPosition(function(position) 
+                        {
+                            initialLocation = new google.maps.LatLng(position.latitude,position.longitude);
+                            map.setCenter(initialLocation);
+                        }, function() 
+                        {
+                            handleNoGeoLocation(browserSupportFlag);
+                        });
+                  // Browser doesn't support Geolocation
                     } else 
                     {
-                        alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
-                        initialLocation = siberia;
+                        browserSupportFlag = false;
+                        handleNoGeolocation(browserSupportFlag);
                     }
-                    map.setCenter(initialLocation);
+                  
+                    function handleNoGeolocation(errorFlag) 
+                    {
+                        if (errorFlag == true) 
+                        {
+                            alert("Geolocation service failed.");
+                            initialLocation = newyork;
+                        } else 
+                        {
+                            alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+                            initialLocation = siberia;
+                        }
+                        map.setCenter(initialLocation);
+                    };
                 };
                 google.maps.event.addListener(map, 'click', function(event) 
                 {
