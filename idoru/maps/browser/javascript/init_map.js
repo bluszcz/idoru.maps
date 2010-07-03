@@ -67,6 +67,7 @@ jQuery(document).ready(function()
             };
             var map = new google.maps.Map(document.getElementById("idoru_edit_map_canvas"), myOptions);
 
+
             if (view_function=='edit') 
             {
                 if (($('input[name=longitude]').val()=='') && ($('input[name=latitude]').val()==''))
@@ -117,6 +118,12 @@ jQuery(document).ready(function()
                         }
                         map.setCenter(initialLocation);
                     };
+                } else 
+                {
+                    var currentLocation = new google.maps.LatLng($('input[name=latitude]').val(),$('input[name=longitude]').val());
+                    drawMarker(map, currentLocation);
+                    map.setCenter(currentLocation);
+                    
                 };
                 google.maps.event.addListener(map, 'click', function(event) 
                 {
