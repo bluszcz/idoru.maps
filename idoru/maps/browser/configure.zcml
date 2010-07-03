@@ -13,12 +13,4 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
-    <browser:page
-        for="IPlaceKMLSpecific"
-        layer="IPlaceKMLSpecific"
-        name="kml"
-        template="kml.pt"
-        permission="zope2.View"
-        />
-
 </configure>
