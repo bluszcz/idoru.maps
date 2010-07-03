@@ -11,10 +11,15 @@ jQuery(document).ready(function()
     if ($('input[name=latitude]').length > 0)
     {
         var view_function = 'edit'; 
-    } else if ($('#plone-document-byline').length > 0)
+    } else if ($('#plone-document-byline').length > 0) 
     {
         var view_function = 'view';
-    }; 
+        var elem = '#plone-document-byline';
+    } else if ($('#parent-fieldname-title').length >0)
+    {
+        var view_function = 'view';
+        var elem = '#parent-fieldname-title';
+    };  
 
     function drawMarker(map, mlocation)
     {
@@ -47,7 +52,7 @@ jQuery(document).ready(function()
             $('input[name=longitude]').after('<div id="field_map" class="field">');
         } else if  (view_function=='view') 
         {
-            $('#plone-document-byline').after('<div id="field_map" class="field">');
+            $(elem).after('<div id="field_map" class="field">');
         };
             
         $('#field_map').append('<div id="idoru_edit_map_canvas" style="position: relative;  height: 480px" >');
