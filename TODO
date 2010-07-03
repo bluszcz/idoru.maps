@@ -1,0 +1,5 @@
+* more configuration from Python
+* Map Widget
+* support for microformat
+* pluggable architecture (to include Bing maps and others)
+
