@@ -7,8 +7,6 @@ from Products.Archetypes import atapi
 from Products.ATContentTypes.content import base
 from Products.ATContentTypes.content import schemata
 
-#from idoru.maps.Widget import CoordinateWidget
-
 # -*- Message Factory Imported Here -*-
 
 from idoru.maps.interfaces import IPlace

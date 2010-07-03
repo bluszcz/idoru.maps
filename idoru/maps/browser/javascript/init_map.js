@@ -16,8 +16,6 @@ jQuery(document).ready(function()
         var view_function = 'view';
     }; 
 
-    alert(view_function);    
-
     function drawMarker(map, mlocation)
     {
         if (view_function=='edit')
