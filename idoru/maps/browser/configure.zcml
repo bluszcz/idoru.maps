@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="idoru.maps">
+
+
+		<browser:resourceDirectory
+			name="idoru.maps.javascript"
+			directory="javascript"
+		/>
+
+  <include package="plone.app.contentmenu" />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+</configure>
