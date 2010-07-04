@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"
+			xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="idoru.maps">
+  <Placemark>
+    <name tal:content="context/title"></name>
+    <description tal:content="context/description">Attached to the ground. Intelligently places itself at the height of the underlying terrain.</description>
+    <Point>
+      <coordinates tal:content="string: ${context/latitude},${context/longitude}">-122.0822035425683,37.42228990140251,0</coordinates>
+    </Point>
+  </Placemark>
+</kml>
+

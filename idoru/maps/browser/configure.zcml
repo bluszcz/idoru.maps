@@ -9,6 +9,14 @@
 			directory="javascript"
 		/>
 
+	<browser:page
+	for="..interfaces.IPlace"
+	name="KML"
+	class=".kml.KMLView"
+	permission="zope2.View"
+	template="templates/kml_view.pt"
+	/>
+
   <include package="plone.app.contentmenu" />
 
   <!-- -*- extra stuff goes here -*- -->
