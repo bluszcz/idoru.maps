@@ -15,7 +15,8 @@
   <property name="allow_discussion">False</property>
   <property name="default_view">place_view</property>
   <property name="view_methods">
-    <element value="base_view" />
+    <element value="place_view" />
+    <element value="kml_view" />
   </property>
  <alias from="(Default)" to="(dynamic view)" />
  <alias from="edit" to="place_edit" />
