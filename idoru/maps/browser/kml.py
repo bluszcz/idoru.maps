@@ -1,7 +1,7 @@
 import zope.formlib
 from zope.component import createObject
 from Acquisition import aq_base
-from Products.Five.formlib import formbase as fiveformbase
+from five.formlib import formbase as fiveformbase
 from plone.app.form import base as formbase
 
 from idoru.maps import interfaces
