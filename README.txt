@@ -16,8 +16,8 @@ Features
  * Support for GeoURL (ICBM tag), Geo Tag http://en.wikipedia.org/wiki/Geotagging#HTML_pages
  * Basic support for Dublin Core
 
-Compability
-===========
+Browser compability
+===================
 
 Tested on following browsers:
 
@@ -26,6 +26,11 @@ Tested on following browsers:
  * Firefox 3.6.4
 
 *Should* works also with others browsers :)
+
+Plone compability
+=================
+
+Aims to work with latest version of Plone (right now it is 4.2).
 
 Examples
 ========
