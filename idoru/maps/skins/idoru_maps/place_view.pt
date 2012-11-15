@@ -49,7 +49,11 @@
 
 
   </metal:javascript_head>
-
+  <metal:headslot fill-slot="head_slot">
+    <meta name="DC.title" tal:attributes="content string:${here/Title}" />
+    <meta name="geo.position" tal:attributes="content string:${here/latitude};;${here/longitude}" />
+    <meta name="ICBM" tal:attributes="content string:${here/latitude}, ${here/longitude}" />
+  </metal:headslot>
   <metal:css fill-slot="style_slot">
     <tal:comment replace="nothing">
       Many of the following defines duplicated from the tal:defines in the
