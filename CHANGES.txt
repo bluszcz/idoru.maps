@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.2 (xxxx-xx-xx)
+----------------
+
+- Support for Dublin Core / GEO Meta Data
+- Support for Plone 4.2
+  [""]
+
 0.1 (xxxx-xx-xx)
 ----------------
 
