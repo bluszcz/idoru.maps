@@ -7,6 +7,8 @@
 
 jQuery(document).ready(function() 
 {
+
+
     var view_function = 'none';
     if ($('input[name=latitude]').length > 0)
     {
@@ -138,7 +140,9 @@ jQuery(document).ready(function()
             
             if (view_function=='view') 
             {
-                var initialMarkerLocation = new google.maps.LatLng($('#parent-fieldname-latitude').text(), $('#parent-fieldname-longitude').text());
+                var ll = $("meta[name=geo.position]").attr('content').split(';')
+
+                var initialMarkerLocation = new google.maps.LatLng(ll[0],ll[1] );
                 drawMarker(map, initialMarkerLocation);
                 map.setCenter(initialMarkerLocation);
             };
