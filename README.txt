@@ -1,18 +1,42 @@
-.. contents::
+   "        #                                                         
+ mmm     mmm#   mmm    m mm  m   m         mmmmm   mmm   mmmm    mmm  
+   #    #" "#  #" "#   #"  " #   #         # # #  "   #  #" "#  #   " 
+   #    #   #  #   #   #     #   #         # # #  m"""#  #   #   """m 
+ mm#mm  "#m##  "#m#"   #     "mm"#    #    # # #  "mm"#  ##m#"  "mmm" 
+   by bluszcz@bluszcz.net                                #            
+                                                         "  
 
 idoru.maps is a simply Plone product which ads new Content Type - Place.
 
-One of feature is a support for  Geolocation API Specification: http://dev.w3.org/geo/api/spec-source.html 
 
-It has been tested under:
+Features
+========
 
-* chromium
-* opera 10.60
-* firefox 3.6.4
+ * Support for Google Maps (planned more API's - Bing and so)
+ * Support for GeoURL (ICBM tag), Geo Tag http://en.wikipedia.org/wiki/Geotagging#HTML_pages
+ * Basic support for Dublin Core
 
-You can see example here: http://dev.bluszcz.net/places/fast-food/cheap-falafel/
+Compability
+===========
 
-To install it add to your buildout.cfg:
+Tested on following browsers:
+
+ * Chromium (developed against Chrome 20)
+ * Opera 10.60
+ * Firefox 3.6.4
+
+*Should* works also with others browsers :)
+
+Examples
+========
+
+ * Place view HTML: http://dev.bluszcz.net/places/fast-food/cheap-falafel/
+ * Place view KML:  http://dev.bluszcz.net/places/fast-food/cheap-falafel/KML
+
+Installation
+============
+
+To install it, add to your buildout.cfg:
 
 	[buildout]
 	eggs +=
@@ -29,8 +53,11 @@ To install it add to your buildout.cfg:
 	repository = git@github.com:bluszcz/idoru.maps.git
 	as_egg = true
 
-Egg and release should be soon.
-
 - Code repository: http://github.com/bluszcz/idoru.maps
 - Report bugs at http://github.com/bluszcz/idoru.maps/issues
+
+Roadmap
+=======
+
+ * Handling more maps API's
 
